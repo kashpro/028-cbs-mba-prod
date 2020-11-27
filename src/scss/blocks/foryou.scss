@@ -1,0 +1,53 @@
+.foryou {
+  $this: &;
+  padding-top: 120px;
+  padding-bottom: 131px;
+  &__container {
+
+  }
+  &__title {
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 55px;
+    color: #E64B52;
+    margin-bottom: 87px;
+  }
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__item {
+    // background-color: $temp2;
+    flex: 1 1 45%;
+    display: flex;
+    align-items: center;
+    &:nth-child(odd) {
+      margin-right: 45px;
+    }
+    &:nth-child(-n + 2) {
+      margin-bottom: 84px;
+    }
+    &:nth-child(3n + 1) {
+      #{$this}__role {
+        background-color: #091836;
+      }
+    }
+  }
+  &__role {
+    align-self: stretch;
+    color: #ffffff;
+    flex: 0 0 251px;
+    background-color: #4B5E93;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 30px;
+    margin-right: 22px;
+    display: flex;
+    align-items: center;
+    padding-left: 22px;
+  }
+  &__text {
+    font-size: 24px;
+    line-height: 24px;
+  }
+}

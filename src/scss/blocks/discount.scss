@@ -1,0 +1,91 @@
+.discount {
+  // margin-bottom: 76px;
+  background-color: #E64B52;
+  // @media (max-width: 767px) {
+	// 	margin-bottom: 30px;
+	// }
+  &__container {
+    // padding-left: 80px;
+    // padding-right: 80px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    // @media (max-width: 1365px) {
+    //   flex-wrap: wrap;
+    //   justify-content: center;
+    // }
+    // @media (max-width: 991px) {
+    //   padding: 40px 60px;
+    // }
+    // @media (max-width: 767px) {
+    //   padding: 18px 18px 24px 18px;
+    // }
+  }
+  &__value {
+    // background-color: $temp1;
+    font-weight: 600;
+    font-size: 46px;
+    line-height: 1;
+    text-align: center;
+    color: #FFFFFF;
+    display: block;
+    // margin-right: 87px;
+    flex-shrink: 0;
+    max-width: 167px;
+    // @media (max-width: 1365px) {
+    //   margin-right: 35px;
+    // }
+    // @media (max-width: 767px) {
+    //   font-size: 20px;
+    //   margin-right: 15px;
+    //   max-width: 78px;
+    // }
+    span {
+      font-weight: 600;
+      font-size: 72px;
+      // line-height: 150%;
+      letter-spacing: -0.03em;
+      // @media (max-width: 767px) {
+      //   font-size: 30px;
+      // }
+    }
+  }
+  &__title {
+    flex-shrink: 0;
+    // background-color: $temp2;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 150%;
+    color: #FFFFFF;
+    max-width: 652px;
+    letter-spacing: -0.05em;
+    // @media (max-width: 1365px) {
+    //   max-width: 527px;
+    // }
+    // @media (max-width: 991px) {
+    //   max-width: 500px;
+    // }
+    // @media (max-width: 767px) {
+    //   font-size: 19px;
+    //   line-height: 20px;
+    //   flex: 0 1 240px;
+    // }
+  }
+  &__btn {
+    // background-color: $temp1;
+    width: 355px;
+    padding: 14px;
+    // @media (max-width: 1365px) {
+    //   margin-top: 30px;
+    // }
+    // @media (max-width: 767px) {
+    //   width: 340px;
+    //   margin-top: 15px;
+    //   margin-right: 15px;
+    //   margin-left: 15px;
+    // }
+  }
+}
