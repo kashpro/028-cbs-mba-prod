@@ -7,11 +7,22 @@
   &__container {
     // background-color: $temp1;
     display: flex;
+    @media (max-width: 1365px) {
+      flex-direction: column;
+      align-items: center;
+    }
   }
   &__box1 {
     // background-color: $temp2;
     flex: 0 0 795px;
     margin-right: 105px;
+    @media (max-width: 1720px) {
+      flex: 0 1 50%;
+      margin-right: 20px;
+    }
+    @media (max-width: 1365px) {
+     margin-right: 0;
+    }
   }
   &__box2 {
     // background-color: $temp3;
@@ -22,6 +33,13 @@
     align-items: flex-start;
     position: relative;
     // justify-content: center;
+    @media (max-width: 1720px) {
+      // flex: 0 1 50%;
+    }
+    @media (max-width: 1365px) {
+      max-width: 580px;
+      flex: 0 1 auto;
+    }
     
   }
   &__image {
@@ -31,11 +49,15 @@
     margin-bottom: 40px;
     right: 0;
     top: 105px;
+    @media (max-width: 1365px) {
+      top: 0;
+    }
     img {
       // position: absolute;
       // float: right;
       // top: 0;
     }
+    
   }
   &__text1 {
     font-size: 24px;
@@ -81,6 +103,9 @@
     font-weight: 600;
     font-size: 54px;
     line-height: 47px;
+    @media (max-width: 1365px) {
+      margin-top: 130px;
+    }
     // background-color: $temp1;
     // position: relative;
     // font-weight: 600;
@@ -132,7 +157,7 @@
     margin-bottom: 63px;
   }
   &__btn {
-    width: 272px;
+    max-width: 272px;
     align-self: center;
   }
 }

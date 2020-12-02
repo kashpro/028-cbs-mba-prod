@@ -1,0 +1,64 @@
+.money {
+  // padding-top: 60px;
+  margin-top: 60px;
+  &__container {
+    // background-color: $temp1;
+  }
+  &__title {
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 40px;
+    color: #02112E;
+    margin-bottom: 80px;
+  }
+  &__content {
+    // background-color: $temp2;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+    height: 1015px;
+    // align-items: flex-start;
+    @media (max-width: 1365px) {
+      height: auto;
+      align-items: center;
+      align-content: center;
+    }
+  }
+  &__cost {
+    // background-color: $temp1;
+    // height: 400px;
+    // max-width: 500px;
+    @media (max-width: 1365px) {
+      order: 1;
+      margin-bottom: 50px;
+    }
+  }
+  &__countdown {
+    // background-color: $temp2;
+    // height: 500px;
+    // max-width: 500px;
+    @media (max-width: 1365px) {
+      order: 4;
+    }
+  }
+  &__first {
+    // background-color: $temp3;
+    // height: 500px;
+    // max-width: 500px;
+    @media (max-width: 1365px) {
+      order: 2;
+      margin-bottom: 100px;
+    }
+  }
+  &__cashback {
+    // background-color: $temp4;
+    // height: 400px;
+    // max-width: 500px;
+    @media (max-width: 1365px) {
+      order: 3;
+      margin-bottom: 50px;
+    }
+  }
+}

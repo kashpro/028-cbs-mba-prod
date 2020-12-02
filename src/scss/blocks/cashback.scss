@@ -1,0 +1,35 @@
+.cashback {
+  // overflow: visible;
+  position: relative;
+  max-width: 490px;
+  background-color: #EEF0FB;
+  padding: 143px 65px 22px 65px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__decor {
+    background-image: url("../assets/images/cashback_bg_01.svg");
+    background-repeat: no-repeat;
+    // background-position: 50% 0;
+    position: absolute;
+    width: 264px;
+    height: 264px;
+    top: -105px;
+
+  }
+  &__title {
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 151.4%;
+    text-transform: uppercase;
+    color: #091836;
+  }
+  &__text {
+    font-size: 18px;
+    line-height: 125.2%;
+    text-align: center;
+    color: #091836;
+    
+    
+  }
+}

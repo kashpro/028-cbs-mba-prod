@@ -1,0 +1,118 @@
+.cost {
+  color: #FFFFFF;
+  max-width: 726px;
+  background-color: #091836;
+  padding: 55px 55px 30px 60px;
+  position: relative;
+  background-image: url("../assets/images/cost_bg_02.svg");
+  background-position: 100% 95px;
+  background-repeat: no-repeat;
+  // margin-bottom: 77px;
+  &__decor {
+    position: absolute;
+    width: 319px;
+    height: 209px;
+    background-image: url("../assets/images/cost_bg_01.svg");
+    background-repeat: no-repeat;
+    right: -20px;
+    top: -30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  &__text1 {
+    max-width: 165px;
+    font-weight: bold;
+    font-size: 43px;
+    line-height: 43px;
+    position: relative;
+    top: -30px;
+  }
+  &__text2 {
+    font-size: 18px;
+    line-height: 125.2%;
+    top: -30px;
+    position: relative;
+  }
+  &__box1 {
+    // background-color: $temp1;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+  }
+  &__box2 {
+    // background-color: $temp2;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__text3 {
+    font-size: 24px;
+    line-height: 24px;
+    margin-bottom: 11px;
+  }
+  &__title {
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 100%;
+    max-width: 283px;
+    margin-bottom: 30px;
+  }
+  &__list {
+
+  }
+  &__item {
+    padding-left: 37px;
+    position: relative;
+    max-width: 310px;
+    & + & {
+      margin-top: 21px;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      background-image: url("../assets/images/check_icon_01.svg");
+      background-repeat: no-repeat;
+      left: 0;
+    }
+  }
+  &__box3 {
+    // background-color: $temp5;
+    flex: 0 1 310px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  &__box4 {
+    // background-color: $temp6;
+    flex: 0 1 210px;
+  }
+  &__text4 {
+    font-size: 17px;
+    line-height: 125.2%;
+    margin-bottom: 10px;
+  }
+  &__text5 {
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 1;
+    color: #E64B52;
+  }
+  &__text6 {
+    font-size: 20px;
+    line-height: 32px;
+    font-weight: 700;
+    &--stripe {
+      text-decoration: line-through;
+    }
+  }
+  
+  &__box5 {
+    // background-color: $temp4;
+    & + & {
+      margin-top: 16px;
+    }
+  }
+}

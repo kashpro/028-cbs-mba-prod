@@ -21,11 +21,21 @@
     flex: 1 1 45%;
     display: flex;
     align-items: center;
+    @media (max-width: 1365px) {
+      flex-direction: column;
+      // flex: 0 1 340px;
+    }
     &:nth-child(odd) {
       margin-right: 45px;
+      // @media (max-width: 1365px) {
+      //   // margin-right: 0;
+      // }
     }
     &:nth-child(-n + 2) {
       margin-bottom: 84px;
+      @media (max-width: 1365px) {
+        margin-bottom: 30px;
+      }
     }
     &:nth-child(3n + 1) {
       #{$this}__role {
@@ -45,9 +55,18 @@
     display: flex;
     align-items: center;
     padding-left: 22px;
+    @media (max-width: 1365px) {
+      margin-right: 0;
+      flex: 0 0 120px;
+      margin-bottom: 25px;
+    }
   }
   &__text {
     font-size: 24px;
     line-height: 24px;
+    @media (max-width: 1365px) {
+      font-size: 20px;
+    line-height: 20px;
+    }
   }
 }

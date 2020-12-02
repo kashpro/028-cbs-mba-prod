@@ -1,362 +1,270 @@
 /* Development stats */
 import Development from './development.js';
-if (typeof cfg != "undefined" && cfg.showStats === true) {Development.addWindowStatsElement();}
-
+if (process.env.NODE_ENV === "development") {Development.addWindowStatsElement();}
+// console.log(process.env.NODE_ENV);
 /* App styles */
 import "@/scss/main.scss";
 
-// import $ from "jquery";
+import $ from "jquery";
+// window.$ = $;
+window.jQuery = $;
 // const jQuery = $;
-// import slick from "slick-carousel";
 
+// import fancybox from "@fancyapps/fancybox";
+
+
+// const jquery = require("jquery");
+// const $ = require("jquery");
+// const jQuery = require("jquery");
+// window.jQuery = $;
+require("@fancyapps/fancybox"); 
+
+// var $ = require("jquery");
+// window.jQuery = $;
+// var slick = require("slick-carousel");
+// require("@fancyapps/fancybox");
+
+import slick from "slick-carousel";
 // import mediumZoom from 'medium-zoom';
 
-// /* Program tabs */
-// {{
-//   const $programList = document.querySelector(".js-program-list");
-//   const $programBox1All = document.querySelectorAll(".js-program-box1");
-//   const $programContentAll = document.querySelectorAll(".js-program-content");
-//   $programList.addEventListener("click", programListClickHandler, false);
+/* program detail buttons */
+{{
+  const $detailButtons = document.querySelectorAll(".js-detail-btn");
+  $detailButtons.forEach( (item) => {item.addEventListener("click", detailButtonClickHandler)} );
 
-//   const programClick = new Event("click", {bubbles: true});
-//   $programBox1All[0].dispatchEvent(programClick);
+  const $programLists = document.querySelectorAll(".js-program-list");
+  // $programLists.forEach( (item) => {$(item).hide();} );
 
+  function detailButtonClickHandler(e) {
+    const activeClass = "program__detail--active";
+    const $target = $(e.target);
+    const $detailButton = $target.closest(".js-detail-btn");
+    const $programBox = $target.closest(".js-program-box");
+    const $programList = $programBox.find(".js-program-list");
+    // console.log($programList);
 
-//   function programListClickHandler(e) {
-//     $programBox1All.forEach( (item) => {item.classList.remove("program__box1--active");} );
-//     // $programContentAll.forEach( (item) => {item.classList.add("fade");} );
-//     $programContentAll.forEach( (item) => {item.classList.add("program__content--collapse");} );
-//     const $programBox1 = e.target.closest(".js-program-box1");
-//     if ($programBox1) {
-//       const $content = $programBox1.nextElementSibling;
-//       if ($content) {$content.classList.remove("program__content--collapse");}
-//       // if ($content) {$content.classList.remove("fade");}
-//       $programBox1.classList.add("program__box1--active");
-//     }
-//   }
-// }}
+    if ($detailButton.hasClass(activeClass)) {
+      $detailButton.removeClass(activeClass);
+      $programList.slideUp(300);
+    } else {
+      $detailButton.addClass(activeClass);
+      $programList.slideDown(300);
+    }
+  }
+}}
 
-// /* Modals */
-// {{
-//   /* Modal components*/
-//   const $gift = document.querySelector(".js-modal-gift");
-//   const $consult = document.querySelector(".js-modal-consult");
-//   const $plan = document.querySelector(".js-modal-plan");
-//   const $discount = document.querySelector(".js-modal-discount");
-//   const $start = document.querySelector(".js-modal-start");
-//   const $components = [$gift, $consult, $plan, $discount, $start];
-
-//   /* Init */
-//   const $modal = document.querySelector(".js-modal");
-//   const $modalClose = document.querySelector(".js-modal-close");
-//   const $modalComponent = document.querySelector(".js-modal-component");
-//   $components.forEach( item => {
-//     if (item) {
-//       item.classList.add("hide");
-//       $modalComponent.append(item);
-//     }
-//   } );
-
-//   $modal.addEventListener("click", closeModalSelf);
-//   $modalClose.addEventListener("click", closeModal);
-
-//   /* Functions */
-//   function openModal($component) {
-//     $components.forEach( item => {
-//       if (item) {
-//         item.classList.add("hide");
-//       }
-//     } );
-//     $component.classList.remove("hide");
-//     $modal.classList.add("modal--show");
-//     window.addEventListener("keyup", closeModalKeyboard); 
-//   }
-
-//   function closeModal() {
-//     $modal.classList.remove("modal--show");
-//     window.removeEventListener("keyup", closeModalKeyboard); 
-//   }
-  
-//   function closeModalSelf(e) {
-//     if (e.target == this) {closeModal();}
-//   }
-
-//   function closeModalKeyboard(e) {
-//     if (e.code === "Escape" || e.keyCode === 27) {
-//       closeModal();
-//     }
-//   }
-
-//   /* Buttons actions */
-//   const $consultButtons = document.querySelectorAll(".js-btn-consult");
-//   $consultButtons.forEach( item => {item.addEventListener( "click", () => {openModal($consult);} );} );
-
-//   // const $giftButtons = document.querySelectorAll(".js-btn-gift");
-//   // $giftButtons.forEach( item => {item.addEventListener( "click", () => {openModal($gift);} );} );
-  
-//   const $discountButtons = document.querySelectorAll(".js-btn-discount");
-//   $discountButtons.forEach( item => {item.addEventListener( "click", () => {openModal($discount);} );} );
-
-//   const $planButtons = document.querySelectorAll(".js-btn-plan");
-//   $planButtons.forEach( item => {item.addEventListener( "click", () => {openModal($plan);} );} );
-
-//   const $startButtons = document.querySelectorAll(".js-btn-start");
-//   $startButtons.forEach( item => {item.addEventListener( "click", () => {openModal($start);} );} );
-
-//   // openModal($discount);
-// }}
-
-// /* youtube video */
-// {{
-//   var tag = document.createElement('script');
-//   tag.src = "https://www.youtube.com/iframe_api";
-//   var firstScriptTag = document.getElementsByTagName('script')[0];
-//   firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-//   // window.player;
-//   // window.vimeoPlayer;
-
-//   const $video = document.querySelector(".js-video");
-//   //клик на тумане - уничтожить плеер
-//   $video.addEventListener("click", function(e) {
-//   if (e.target == this) {
-//       closeVideo();
-//   }
-//   });
-
-//   const $videoClose = document.querySelector(".js-video-close");
-//   $videoClose.addEventListener("click", (e) => {
-//     closeVideo();
-//   });
-
-//   const $videoButtons = document.querySelectorAll(".js-video-btn");
-//   $videoButtons.forEach( item => {item.addEventListener( "click", (e) => {
-//     $video.classList.add("video--show");
-//     //слушатели esc
-//     window.addEventListener("keyup", closeVideoKeyboard);
-//     if (e.target.dataset.vimeoUrl) {
-//       window.vimeoPlayer = new Vimeo.Player('vm-player', {
-//         url: e.target.dataset.vimeoUrl,
-//         // width: 640,
-//       });
-//       window.vimeoPlayer.play();
-//       return;
-//     }
-    
-//     try {
-//       window.player = new YT.Player("yt-player", {
-//         videoId: e.target.dataset.id,
-//         // width: "960",
-//         // height: "540",
-//         events: {
-//           'onReady': e => window.player.playVideo(),
-//         },
-//     });
-//     } catch (err) {
-//       alert(err.message);
-//     } 
-//   } );} );
-
-//   function closeVideo() {
-//     // console.log(window.player);
-//     // console.log(window.vimeoPlayer);
-//     if (window.player) {
-//       window.player.stopVideo();
-//       window.player.destroy();
-//       window.player = null;
-//     }
-//     if (window.vimeoPlayer) {
-//       window.vimeoPlayer.pause();
-//       window.vimeoPlayer.destroy();
-//       window.vimeoPlayer = null;
-//     }
-    
-//     window.removeEventListener("keyup", closeVideoKeyboard);
-//     //закрыть модал
-//     $video.classList.remove("video--show");
-//   }
-
-//   function closeVideoKeyboard(e) {
-//     if (e.code === "Escape" || e.keyCode === 27) {
-//       //уничтожить плеер
-//       closeVideo();
-//     }
-//   }
-// }}
-
-
-// // function onYouTubeIframeAPIReady() {
-// //   window.player2 = new YT.Player('player', {
-// //     // height: '360',
-// //     // width: '640',
-// //     videoId: 'g-uF6uHgMYw',
-// //     events: {
-// //       'onReady': () => player2.playVideo(), 
-// //       // 'onStateChange': onPlayerStateChange
-// //     }
-// //   });
-// // }
 
 // /* Show more speakers button */
-// {{
-//   const $speakersButton = document.querySelector(".js-speakers-btn");
-//   const $speakersBox = document.querySelector(".js-speakers-box");
-//   const $speakersList = document.querySelector(".js-speakers-list");
-//   $speakersButton.addEventListener("click", speakersButtonClickHandler, false);
-//   const $secondarySpeakers = document.querySelectorAll(".js-speakers-item");
-//   if (!$secondarySpeakers.length) {
-//     $speakersButton.classList.add("hide");
-//   }
+{{
+  let isOpened = false;
+  let yOffset = null;
+  const $speakersButton = $(".js-speakers-btn");
+  // const $speakersBox = $(".js-speakers-box");
+  const $speakersFirstList = $(".js-speakers-first-list");
+  const $speakersSecondList = $(".js-speakers-second-list");
+  $speakersButton.on("click", speakersButtonClickHandler);
   
-//   function speakersButtonClickHandler(e) {
-//     $speakersButton.classList.add("hide");
-//     $speakersList.classList.remove("speakers__list1--hide");
-//   }
-// }}
-
-// /* Result block slider */
-
-// {{
-//   const resultSlider = $(".js-result-slider").slick({
-//     arrows: true,
-// 		slidesToShow: 1,
-// 		slidesToScroll: 1,
-// 		dots: false,
-// 		accessibility: false,
-// 		prevArrow: $(".js-result-prev"),
-//     nextArrow: $(".js-result-next"),
-// 	  // autoplay: true,
-// 	  // autoplaySpeed: 5000,
-// 	  infinite: true,
-// 	  speed: 500,
-// 	  pauseOnFocus: true,
-// 	  pauseOnHover: false,
-// 		// responsive: [
-// 			// {
-// 			// 	breakpoint: 1071,
-// 			// 	settings: {
-// 			// 		slidesToShow: 3,
-// 			// 		slidesToScroll: 3,
-// 			// 	},
-// 			// },
-// 			// {
-// 			// 	breakpoint: 851,
-// 			// 	settings: {
-// 			// 		slidesToShow: 2,
-// 			// 		slidesToScroll: 2,
-// 			// 	},
-// 			// },
-// 			// {
-// 			// 	breakpoint: 451,
-// 			// 	settings: {
-// 			// 		slidesToShow: 1,
-// 			// 		slidesToScroll: 1,
-// 			// 	},
-// 			// },
-// 		// ],
-//   });
-// }}
-
-// /* Result block slider */
-// {{
-//   const feedbackSlider = $(".js-feedback-slider").slick({
-//     arrows: true,
-// 		slidesToShow: 1,
-// 		slidesToScroll: 1,
-// 		dots: false,
-// 		// accessibility: false,
-// 		prevArrow: $(".js-feedback-prev"),
-//     nextArrow: $(".js-feedback-next"),
-// 	  // autoplay: true,
-// 	  // autoplaySpeed: 5000,
-// 	  infinite: true,
-// 	  // speed: 500,
-// 	  // pauseOnFocus: true,
-//     // pauseOnHover: false,
-//     // centerMode: true,
-//     // variableWidth: true,
-// 		// responsive: [
-// 			// {
-// 			// 	breakpoint: 1071,
-// 			// 	settings: {
-// 			// 		slidesToShow: 3,
-// 			// 		slidesToScroll: 3,
-// 			// 	},
-// 			// },
-// 			// {
-// 			// 	breakpoint: 851,
-// 			// 	settings: {
-// 			// 		slidesToShow: 2,
-// 			// 		slidesToScroll: 2,
-// 			// 	},
-// 			// },
-// 			// {
-// 			// 	breakpoint: 451,
-// 			// 	settings: {
-// 			// 		slidesToShow: 1,
-// 			// 		slidesToScroll: 1,
-// 			// 	},
-// 			// },
-// 		// ],
-//   });
-// }}
-
-
-
-// /* Countdown */
-// {{
-//   const targetDate = cfg.countdownTargetDate.getTime();
-//   const $days = document.querySelector(".js-countdown-days");
-//   const $hours = document.querySelector(".js-countdown-hours");
-//   const $minutes = document.querySelector(".js-countdown-minutes");
-//   const $seconds = document.querySelector(".js-countdown-seconds");
-
-//   const $daysLabel = document.querySelector(".js-countdown-days-label");
-//   const $hoursLabel = document.querySelector(".js-countdown-hours-label");
-//   const $minutesLabel = document.querySelector(".js-countdown-minutes-label");
-//   const $secondsLabel = document.querySelector(".js-countdown-seconds-label");
+  const $secondarySpeakers = document.querySelectorAll(".js-speakers-item");
+  if (!$secondarySpeakers.length) {
+    $speakersButton.classList.add("hide");
+  }
   
-//   let timer = setInterval( () => {
-//     const now = Date.now();
-//     const diff = (targetDate - now)/1000;
-//     if (diff < 0) {
-//       clearInterval(timer);
-//       return;
-//     }
-//     let days = Math.round(diff/3600/24);
-//     let hours = Math.round(diff/3600%24);
-//     let minutes = Math.round(diff/60%60);
-//     let seconds = Math.round(diff%60);
-    
-//     const daysLabel = declOfNum(days, ['День', 'Дня', 'Дней']);
-//     const hoursLabel = declOfNum(hours, ['Час', 'Часа', 'Часов']);
-//     const minutesLabel = declOfNum(minutes, ['Минута', 'Минуты', 'Минут']);
-//     const secondsLabel = declOfNum(seconds, ['Секунда', 'Секунды', 'Секунд']);
-    
-//     days = `${days}`;
-//     hours < 10 ? hours = `0${hours}` : hours = `${hours}`;
-//     minutes < 10 ? minutes = `0${minutes}` : minutes = `${minutes}`;
-//     seconds < 10 ? seconds = `0${seconds}` : seconds = `${seconds}`;
-//     $days.innerHTML = days;
-//     $hours.innerHTML = hours;
-//     $minutes.innerHTML = minutes;
-//     $seconds.innerHTML = seconds;
+  function speakersButtonClickHandler(e) {
+     if (!isOpened) {
+      yOffset = window.pageYOffset;
+      isOpened = true;
+      $speakersFirstList.addClass("speakers__list--margin");
+      $speakersSecondList.slideDown(300);
+      $speakersButton.text('Скрыть спикеров');
+    } else {
+      window.scrollTo(0, yOffset);
+      isOpened = false;
+      $speakersFirstList.removeClass("speakers__list--margin");
+      $speakersSecondList.slideUp(300);
+      $speakersButton.text('Показать больше спикеров');
+    }
+    // $speakersButton.classList.add("hide");
+  }
+  //заполняем мобильный лист
+  const $mobileSpeakersList = $(".js-speakers-mobile-list");
+  $speakersFirstList.children().each( (i, item) => {
+    let $cloned = $(item).clone();
+    $mobileSpeakersList.append($cloned);
+  } );
+  $speakersSecondList.children().each( (i, item) => {
+    let $cloned = $(item).clone();
+    $mobileSpeakersList.append($cloned);
+  } );
+}}
 
-//     $daysLabel.innerHTML = daysLabel;
-//     $hoursLabel.innerHTML = hoursLabel;
-//     $minutesLabel.innerHTML = minutesLabel;
-//     $secondsLabel.innerHTML = secondsLabel;
-//   }, 1000 );
+/* Reasons slider */
+{{
+  const reasonsSlider = $(".js-reasons-slider").slick({
+    arrows: true,
+    dots: true,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		// dots: false,
+		accessibility: false,
+		prevArrow: $(".js-reasons-prev"),
+    nextArrow: $(".js-reasons-next"),
+    dotsClass: 'reasons__dots-list',						      //как обозвать класс списка точек
+    appendDots: $('.js-reasons-dots'),					      //куда добавить список точек (пустой контейнер)
+    customPaging: function(slider, i) {return '';},		//что вставить в каждый элемент списка точек (HTML-код)
+	  infinite: true,
+		// responsive: [
+			// {
+			// 	breakpoint: 1071,
+			// 	settings: {
+			// 		slidesToShow: 3,
+			// 		slidesToScroll: 3,
+			// 	},
+			// },
+			// {
+			// 	breakpoint: 851,
+			// 	settings: {
+			// 		slidesToShow: 2,
+			// 		slidesToScroll: 2,
+			// 	},
+			// },
+			// {
+			// 	breakpoint: 451,
+			// 	settings: {
+			// 		slidesToShow: 1,
+			// 		slidesToScroll: 1,
+			// 	},
+			// },
+		// ],
+  });
+}}
 
-//   function declOfNum(n, textForms) {  
-//     n = Math.abs(n) % 100;
-//     const n1 = n % 10;
-//     if (n > 10 && n < 20) { return textForms[2]; }
-//     if (n1 > 1 && n1 < 5) { return textForms[1]; }
-//     if (n1 == 1) { return textForms[0]; }
-//     return textForms[2];
-//   }
-// }}
+/* Speakers block slider */
+{{
+  const speakersSlider = $(".js-speakers-slider").slick({
+    arrows: true,
+    dots: true,
+		slidesToShow: 1,
+    slidesToScroll: 1,
+    initialSlide: 1,
+    accessibility: false,
+    // centerMode: true,
+		prevArrow: $(".js-speakers-prev"),
+    nextArrow: $(".js-speakers-next"),
+    dotsClass: 'speakers__dots-list',						      //как обозвать класс списка точек
+    appendDots: $('.js-speakers-dots'),					      //куда добавить список точек (пустой контейнер)
+    customPaging: function(slider, i) {               //что вставить в каждый элемент списка точек (HTML-код)
+      const $thumb = $(slider.$slides[i]).find(".speakers__image img").clone();
+      $thumb/*.removeClass("speakers__image")*/.addClass("speakers__thumb");
+      return $thumb;
+    },
+    // mobileFirst: true,	
+	  infinite: false,
+		responsive: [
+			{
+				breakpoint: 10000,
+				settings: "unslick",
+			},
+			{
+				breakpoint: 1366,
+				settings: {},
+			},
+		],
+  });
+}}
+
+/* Feedback block slider */
+{{
+  const feedbackSlider = $(".js-feedback-slider").slick({
+    arrows: true,
+    dots: true,
+		slidesToShow: 1,
+    slidesToScroll: 1,
+    initialSlide: 1,
+    accessibility: false,
+    // centerMode: true,
+		prevArrow: $(".js-feedback-prev"),
+    nextArrow: $(".js-feedback-next"),
+    dotsClass: 'feedback__dots-list',						      //как обозвать класс списка точек
+    appendDots: $('.js-feedback-dots'),					      //куда добавить список точек (пустой контейнер)
+    customPaging: function(slider, i) {               //что вставить в каждый элемент списка точек (HTML-код)
+      const $thumb = $(slider.$slides[i]).find(".feedback__image1 img").clone();
+      $thumb/*.removeClass("feedback__image1")*/.addClass("feedback__thumb");
+        return $thumb;
+    },
+    // mobileFirst: true,	
+	  infinite: false,
+		responsive: [
+			{
+				breakpoint: 10000,
+				settings: "unslick",
+			},
+			{
+				breakpoint: 1366,
+				settings: {},
+			},
+		],
+  });
+}}
+
+/* Countdown */
+{{
+  const $countdown = document.querySelector(".js-countdown");
+  // console.log($countdown.dataset.to);
+  const targetDate = new Date($countdown.dataset.to).getTime();
+  // console.log(targetDate);
+  const $days = document.querySelector(".js-countdown-days");
+  const $hours = document.querySelector(".js-countdown-hours");
+  const $minutes = document.querySelector(".js-countdown-minutes");
+  const $seconds = document.querySelector(".js-countdown-seconds");
+
+  const $daysLabel = document.querySelector(".js-countdown-days-label");
+  const $hoursLabel = document.querySelector(".js-countdown-hours-label");
+  const $minutesLabel = document.querySelector(".js-countdown-minutes-label");
+  const $secondsLabel = document.querySelector(".js-countdown-seconds-label");
+  
+  let timer = setInterval( () => {
+    const now = Date.now();
+    const diff = (targetDate - now)/1000;
+    if (diff < 0) {
+      clearInterval(timer);
+      return;
+    }
+    let days = Math.floor(diff/3600/24);
+    let hours = Math.floor(diff/3600%24);
+    let minutes = Math.floor(diff/60%60);
+    let seconds = Math.floor(diff%60);
+    // console.log(days, hours, minutes, seconds, diff);
+    
+    
+    const daysLabel = declOfNum(days, ['День', 'Дня', 'Дней']);
+    const hoursLabel = declOfNum(hours, ['Час', 'Часа', 'Часов']);
+    const minutesLabel = declOfNum(minutes, ['Минута', 'Минуты', 'Минут']);
+    const secondsLabel = declOfNum(seconds, ['Секунда', 'Секунды', 'Секунд']);
+    
+    days = `${days}`;
+    hours < 10 ? hours = `0${hours}` : hours = `${hours}`;
+    minutes < 10 ? minutes = `0${minutes}` : minutes = `${minutes}`;
+    seconds < 10 ? seconds = `0${seconds}` : seconds = `${seconds}`;
+    $days.innerHTML = days;
+    $hours.innerHTML = hours;
+    $minutes.innerHTML = minutes;
+    $seconds.innerHTML = seconds;
+
+    $daysLabel.innerHTML = daysLabel;
+    $hoursLabel.innerHTML = hoursLabel;
+    $minutesLabel.innerHTML = minutesLabel;
+    $secondsLabel.innerHTML = secondsLabel;
+  }, 1000 );
+
+  function declOfNum(n, textForms) {  
+    n = Math.abs(n) % 100;
+    const n1 = n % 10;
+    if (n > 10 && n < 20) { return textForms[2]; }
+    if (n1 > 1 && n1 < 5) { return textForms[1]; }
+    if (n1 == 1) { return textForms[0]; }
+    return textForms[2];
+  }
+}}
 // {{
 //   /* increment digits */
 //   !function(t){t.extend(t.easing,{spincrementEasing:function(t,a,e,n,r){return a===r?e+n:n*(-Math.pow(2,-10*a/r)+1)+e}}),t.fn.spincrement=function(a){function e(t,a){if(t=t.toFixed(a),a>0&&"."!==r.decimalPoint&&(t=t.replace(".",r.decimalPoint)),r.thousandSeparator)for(;o.test(t);)t=t.replace(o,"$1"+r.thousandSeparator+"$2");return t}var n={from:0,to:null,decimalPlaces:null,decimalPoint:".",thousandSeparator:",",duration:1e3,leeway:50,easing:"spincrementEasing",fade:!0,complete:null},r=t.extend(n,a),o=new RegExp(/^(-?[0-9]+)([0-9]{3})/);return this.each(function(){var a=t(this),n=r.from;a.attr("data-from")&&(n=parseFloat(a.attr("data-from")));var o;if(a.attr("data-to"))o=parseFloat(a.attr("data-to"));else if(null!==r.to)o=r.to;else{var i=t.inArray(r.thousandSeparator,["\\","^","$","*","+","?","."])>-1?"\\"+r.thousandSeparator:r.thousandSeparator,l=new RegExp(i,"g");o=parseFloat(a.text().replace(l,""))}var c=r.duration;r.leeway&&(c+=Math.round(r.duration*(2*Math.random()-1)*r.leeway/100));var s;if(a.attr("data-dp"))s=parseInt(a.attr("data-dp"),10);else if(null!==r.decimalPlaces)s=r.decimalPlaces;else{var d=a.text().indexOf(r.decimalPoint);s=d>-1?a.text().length-(d+1):0}a.css("counter",n),r.fade&&a.css("opacity",0),a.animate({counter:o,opacity:1},{easing:r.easing,duration:c,step:function(t){a.html(e(t*o,s))},complete:function(){a.css("counter",null),a.html(e(o,s)),r.complete&&r.complete(a)}})})}}(jQuery);
@@ -387,11 +295,52 @@ import "@/scss/main.scss";
 // 	});
 // }}
 
+/* fancybox */
+{{
+  /* закрывашки */
+  $(".js-modal-close").on("click touchstart", () => {
+    $.fancybox.close(true);
+  })
+  /* дипломы */
+  $('[data-fancybox="diploms"]').fancybox({
+    // Options will go here
+    loop: true,
+  });
+  /* модалки */
+  $('.js-modal-btn').fancybox({
+    // Options will go here
+    smallBtn: false,
+    btnTpl: {
+      close: "",
+      // smallBtn: false,
+      // `<button type="button" data-fancybox-close class="fancybox-button fancybox-close-small" title="{{CLOSE}}">
+      // <svg xmlns="http://www.w3.org/2000/svg" version="1" viewBox="0 0 24 24"><path d="M13 12l5-5-1-1-5 5-5-5-1 1 5 5-5 5 1 1 5-5 5 5 1-1z"/></svg>
+      // </button>`,
+      //  `<div class="modal-consult__close js-modal-close"></div>`,
+    }
+  });
+  /* видео - на атрибутах, без опций */
 
-// /* Diploms zoom */
-// /* https://www.npmjs.com/package/medium-zoom */
-// {{
-//   mediumZoom('.cert__image img', {
-//     // background: "#000000",
-//   });
-// }}
+  /* для теста - попапы в зависимости от ответа сервера */
+  const options = {
+    smallBtn: false,
+    btnTpl: {
+      close: "",
+    }
+  };
+  $(".js-action-btn").on("click", (e) => {
+    e.preventDefault();
+    const rnd = Math.random();
+    if (rnd > 0.5) {
+      $.fancybox.open({
+        src: '#js-modal-success',
+        ...options,
+      });
+    } else {
+      $.fancybox.open({
+        src: '#js-modal-error',
+        ...options,
+      });
+    }
+  });
+}}

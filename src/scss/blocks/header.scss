@@ -9,9 +9,10 @@
   //     max-width: 1320px;
   //     margin: 0 auto;
   //   }
-  //   @media (max-width: 1365px) {
-  //     max-width: 960px;
-  //   }
+    @media (max-width: 1365px) {
+      max-width: 960px;
+      margin: 0 auto;
+    }
   //   @media (max-width: 991px) {
   //     max-width: 768px;
   //     padding-left: 15px;
@@ -24,6 +25,9 @@
     margin-right: 25px;
     padding-right: 27px;
     border-right: 1px solid #ffffff;
+    @media (max-width: 1365px) {
+      margin-left: 0;
+    }
   //   @media (max-width: 1500px) {
   //     margin-left: 30px;
   //   }
@@ -137,6 +141,9 @@
   //   @media (max-width: 1365px) {
   //     display: block;
   //   }
+    @media (max-width: 1365px) {
+      margin-right: 0;
+    }
     &:hover {
       @media (min-width: 1280px) {
         svg {

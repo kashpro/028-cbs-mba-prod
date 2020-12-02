@@ -1,0 +1,78 @@
+.diplom {
+  $this: &;
+  color: #0C1E42;
+  padding-top: 150px;
+  padding-bottom: 33px;
+  &__container {
+    // background-color: $temp1;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 1010px;
+    align-items: flex-start;
+    align-content: space-between;
+    @media (max-width: 1365px) {
+      height: auto;
+    }
+  }
+  &__text1 {
+    margin-top: 45px;
+    // background-color: $temp2;
+    font-size: 24px;
+    line-height: 150%;
+    margin-bottom: 18px;
+  }
+  &__title {
+    font-weight: 500;
+    font-size: 60px;
+    line-height: 100%;
+    // background-color: $temp3;
+    margin-bottom: 53px;
+    max-width: 745px;
+  }
+  &__item {
+    // background-color: $temp4;
+    &--1st {
+      max-width: 745px;
+      @media (max-width: 1365px) {
+        max-width: 100%;
+      }
+    }
+    &--2nd {
+      max-width: 497px;
+      margin-bottom: 41px;
+      @media (max-width: 1365px) {
+        max-width: 100%;
+        margin-bottom: 0;
+      }
+    }
+    &--3rd {
+      max-width: 497px;
+      @media (max-width: 1365px) {
+        max-width: 100%;
+      }
+    }
+    @media (max-width: 1365px) {
+      margin-bottom: 40px;
+    }
+  }
+  &__image {
+    cursor: pointer;
+    transition: all 0.2s ease;
+    // background-color: $temp5;
+    margin-bottom: 12px;
+    line-height: 0;
+    &:hover {
+      @media (min-width: 1280px) {
+        filter: contrast(1.2);
+      }
+    }
+  }
+  &__text2 {
+    // background-color: $temp6;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 150%;
+    text-align: center;
+  }
+}

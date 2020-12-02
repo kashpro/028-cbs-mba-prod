@@ -1,0 +1,26 @@
+.one {
+  background-color: #E64B52;
+  padding: 50px 0;
+  color: #ffffff;
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @media (max-width: 1365px) {
+      flex-direction: column;
+    }
+  }
+  &__text {
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 150%;
+    letter-spacing: -0.05em;
+    @media (max-width: 1365px) {
+      margin-bottom: 15px;
+    }
+  }
+  &__btn {
+    max-width: 355px;
+    padding: 14px;
+  }
+}

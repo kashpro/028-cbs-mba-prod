@@ -6,8 +6,13 @@
   color: #ffffff;
   background-image: url("../assets/images/banner_bg_01.png");
   background-repeat: no-repeat;
-  background-position: 800px 50px;
+  // background-position: 800px 50px;
+  background-position: calc(50% + 242px) 0px;
   background-size: auto;
+  @media (max-width: 1365px) {
+		background-position: calc(50% + 209px) 65px;
+    background-size: 64%;
+	}
   &__container {
     position: relative;
     // background-color: $temp1;
@@ -37,6 +42,9 @@
   }
   &__list {
     margin-bottom: 60px;
+    @media (max-width: 1365px) {
+      padding-left: 44px;
+    }
   }
   &__item {
     font-weight: 500;
@@ -197,7 +205,7 @@
 //     }
 //   }
   &__btn {
-    width: 355px;
+    max-width: 355px;
     padding: 14px;
     // margin-top: 50px;
     // @media (max-width: 1365px) {
