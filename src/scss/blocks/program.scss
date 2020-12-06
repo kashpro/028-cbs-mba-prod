@@ -5,8 +5,16 @@
   background-repeat: no-repeat;
   background-position: calc(50% - 430px) 100%;
   @media (max-width: 1365px) {
-    background-position: 0 100%;
+    background-position: 15px 100%;
   }
+  @media (max-width: 991px) {
+		padding-bottom: 340px;
+  }
+  @media (max-width: 767px) {
+    background-size: 210px auto;
+    background-position: 50% calc(100% - 70px);
+    padding-bottom: 360px;
+	}
   &__box2 {
     background-color: #091836;
     padding-top: 50px;
@@ -16,6 +24,16 @@
     background-repeat: no-repeat;
     background-position: 100% 0;
     margin-bottom: 76px;
+    @media (max-width: 991px) {
+      background-position: calc(100% + 155px) 0;
+    }
+    @media (max-width: 767px) {
+      padding-top: 30px;
+      padding-bottom: 30px;
+      background-position: center;
+      background-size: cover;
+      margin-bottom: 60px;
+    }
   }
   &__container1 {
 
@@ -25,6 +43,9 @@
     font-size: 40px;
     line-height: 150%;
     text-align: center;
+    @media (max-width: 767px) {
+      font-size: 28px;
+    }
   }
   &__container2 {
     display: flex;
@@ -34,6 +55,9 @@
   &__btn {
     align-self: center;
     max-width: 400px;
+    @media (max-width: 767px) {
+      font-size: 15px;
+    }
   }
   &__list {
     // background-color: $temp1;
@@ -41,6 +65,12 @@
     margin-bottom: 120px;
     @media (max-width: 1365px) {
       margin-left: 5px;
+    }
+    @media (max-width: 991px) {
+      margin-bottom: 55px;
+    }
+    @media (max-width: 767px) {
+      margin-bottom: 0;
     }
   }
   &__item {
@@ -50,6 +80,10 @@
     // background-color: $temp2;
     align-items: flex-start;
     position: relative;
+    @media (max-width: 991px) {
+      flex-direction: column;
+      padding-left: 65px;
+    }
     &:first-child {
       &::before {
         display: none;
@@ -69,6 +103,9 @@
       transform: translateX(-50%);
       left: 0;
       z-index: -1;
+      @media (max-width: 991px) {
+        top: -45px;
+      }
     }
     &::after {
       transform: translateX(-50%);
@@ -80,10 +117,16 @@
       left: 0;
       top: 70px;
       z-index: -1;
+      @media (max-width: 991px) {
+        top: 30px;
+      }
     }
     & + & {
       #{$this}__box1 {
         border-top: 1px solid #091836;
+        @media (max-width: 991px) {
+          border-top: none;
+        }
       }
     }
   }
@@ -97,6 +140,17 @@
     padding-left: 44px;
     @media (max-width: 1365px) {
       flex: 0 1 621px;
+    }
+    @media (max-width: 991px) {
+      flex: 0 1 auto;
+      border-top: none;
+      // background-color: $temp1;
+      padding-left: 0;
+    }
+    @media (max-width: 767px) {
+      padding-top: 33px;
+      padding-bottom: 33px;
+
     }
   }
   &__num {
@@ -115,6 +169,19 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    @media (max-width: 991px) {
+      flex: 0 1 auto;
+      margin-right: 0;
+      margin-top: 0;
+      padding-left: 25px;
+      padding-right: 25px;
+      width: 100%;
+      max-width: 213px;
+    }
+    @media (max-width: 767px) {
+      font-size: 20px;
+      max-width: 145px;
+    }
      p {
        max-width: 180px;
      }
@@ -128,6 +195,12 @@
       // transform: translateY(-50%);
       left: -70px;
       z-index: -1;
+      @media (max-width: 991px) {
+        left: -65px;
+      }
+      @media (max-width: 767px) {
+        top: 20px;
+      }
     }
     &::after {
       content: "";
@@ -139,6 +212,12 @@
       width: 16px;
       height: 16px;
       border-radius: 50%;
+      @media (max-width: 991px) {
+        left: -65px;
+      }
+      @media (max-width: 767px) {
+        top: 14px;
+      }
     }
   }
   &__name {
@@ -147,6 +226,10 @@
     line-height: 150%;
     color: #091836;
     margin-bottom: 24px;
+    @media (max-width: 767px) {
+      font-size: 16px;
+    }
+
   }
   &__detail {
     background: none;
@@ -160,6 +243,10 @@
     position: relative;
     // margin-bottom: 48px;
     transition: all 0.3s ease;
+    @media (max-width: 767px) {
+      font-size: 20px;
+      margin-bottom: 34px;
+    }
     &:hover {
       @media (min-width: 1280px) {
         color: #b62B32;
@@ -173,9 +260,16 @@
       fill: #E64B52;
       margin-right: 21px;
       transform: rotate(180deg);
+      @media (max-width: 767px) {
+        width: 22px;
+        margin-right: 10px;
+      }
     }
     &--active {
       margin-bottom: 48px;
+      @media (max-width: 767px) {
+        margin-bottom: 24px;
+      }
       svg {
         transform: rotate(0deg);
       }
@@ -213,13 +307,18 @@
       background-color: #E64B52;
       left: 0;
       top: 13px;
+      @media (max-width: 767px) {
+        top: 6px;
+      }
     }
   }
   &__text {
     font-weight: 300;
     font-size: 24px;
     line-height: 150%;
-    
+    @media (max-width: 767px) {
+      font-size: 15px;
+    }
   }
   
 }

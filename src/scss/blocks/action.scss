@@ -8,12 +8,16 @@
   background-color: #091836;
   // height: 400px;
   // padding-top: 100px;
-  // @media (max-width: 767px) {
-	// 	padding-top: 75px;
-	// }
+  
   // @media (max-width: 991px) {
 	// 	padding-bottom: 55px;
-	// }
+  // }
+  @media (max-width: 991px) {
+		margin-top: 80px;
+  }
+  @media (max-width: 767px) {
+		margin-top: 60px;
+	}
   &__container {
     // background-color: $temp1;
     position: relative;
@@ -32,11 +36,20 @@
     font-size: 40px;
     line-height: 100%;
     margin-bottom: 10px;
+    @media (max-width: 767px) {
+      font-size: 35px;
+      text-align: center;
+    }
   }
   &__text5 {
     font-size: 17px;
     line-height: 150%;
     margin-bottom: 70px;
+    @media (max-width: 767px) {
+      font-size: 16px;
+      text-align: center;
+      max-width: 250px;
+    }
   }
   &__box1 {
     // display: flex;
@@ -59,10 +72,16 @@
       margin-right: 0;
       width: 100%;
       max-width: 490px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
     }
     // @media (max-width: 991px) {
     //   max-width: 335px;
     // }
+    @media (max-width: 767px) {
+      max-width: 355px;
+    }
   }
   // &__box2 {
     // background-color: $temp2;
@@ -94,6 +113,12 @@
       justify-content: center;
       padding-bottom: 50px;
     }
+    @media (max-width: 991px) {
+      max-width: 610px;
+    }
+    @media (max-width: 767px) {
+      max-width: 355px;
+    }
     // @media (max-width: 991px) {
     //   padding-top: 0;
     //   padding-bottom: 0;
@@ -119,6 +144,11 @@
     max-width: 416px;
     position: relative;
     border-left: 6px solid #E64B52;
+    @media (max-width: 767px) {
+      font-size: 22px;
+      line-height: 130%;
+      max-width: 320px;
+    }
     &::before {
       // line-height: 1;
       content: "";
@@ -142,6 +172,13 @@
       //   top: -125px;
       //   right: 130px;
       // }
+      @media (max-width: 767px) {
+        width: 70px;
+        height: 70px;
+        background-size: contain;
+        right: -19px;
+        top: -5px;
+      }
     }
   }
     
@@ -166,6 +203,10 @@
     //   line-height: 135%;
     //   margin-bottom: 20px;
     // }
+    @media (max-width: 767px) {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
     &::placeholder {
       transition: all 0.2s ease;
       color: rgba(#ffffff, 0.7);
@@ -284,5 +325,21 @@
     // @media (max-width: 991px) {
     //   text-align: center;
     // }
+  }
+  &__link {
+    transition: all 0.2s ease;
+    font-size: 14px;
+    line-height: 16px;
+    color: #FFFFFF;
+    text-decoration: underline;
+    @media (max-width: 991px) {
+      font-size: 12px;
+      line-height: 16px;
+    }
+    &:hover {
+      @media (min-width: 1280px) {
+	      color: #E64B52;
+      }
+    }
   }
 }

@@ -2,6 +2,14 @@
   $this: &;
   padding-top: 120px;
   padding-bottom: 131px;
+  @media (max-width: 991px) {
+    padding-top: 80px;
+    padding-bottom: 60px;
+    // background-color: $temp1;
+  }
+  @media (max-width: 767px) {
+		padding-bottom: 30px;
+	}
   &__container {
 
   }
@@ -11,10 +19,21 @@
     line-height: 55px;
     color: #E64B52;
     margin-bottom: 87px;
+    @media (max-width: 991px) {
+      margin-bottom: 80px;
+    }
+    @media (max-width: 767px) {
+      font-size: 31px;
+      line-height: 31px;
+      margin-bottom: 30px;
+    }
   }
   &__list {
     display: flex;
     flex-wrap: wrap;
+    @media (max-width: 767px) {
+      flex-direction: column;
+    }
   }
   &__item {
     // background-color: $temp2;
@@ -25,16 +44,37 @@
       flex-direction: column;
       // flex: 0 1 340px;
     }
+    @media (max-width: 767px) {
+      margin-bottom: 30px !important;
+      &:nth-child(3) {
+        order: 1;
+      }
+      &:nth-child(4) {
+        order: 2;
+      }
+      &:nth-child(2) {
+        order: 3;
+      }
+    }
     &:nth-child(odd) {
       margin-right: 45px;
       // @media (max-width: 1365px) {
       //   // margin-right: 0;
       // }
+      @media (max-width: 991px) {
+        margin-right: 58px;
+      }
+      @media (max-width: 767px) {
+        margin-right: 0;
+      }
     }
     &:nth-child(-n + 2) {
       margin-bottom: 84px;
       @media (max-width: 1365px) {
         margin-bottom: 30px;
+      }
+      @media (max-width: 767px) {
+        margin-bottom: 0;
       }
     }
     &:nth-child(3n + 1) {
@@ -60,13 +100,23 @@
       flex: 0 0 120px;
       margin-bottom: 25px;
     }
+    @media (max-width: 991px) {
+      padding-left: 30px;
+    }
+    @media (max-width: 767px) {
+      padding-left: 18px;
+      flex: 0 1 86px;
+      font-size: 25px;
+      line-height: 25px;
+      margin-bottom: 15px;
+    }
   }
   &__text {
     font-size: 24px;
     line-height: 24px;
     @media (max-width: 1365px) {
       font-size: 20px;
-    line-height: 20px;
+      line-height: 20px;
     }
   }
 }

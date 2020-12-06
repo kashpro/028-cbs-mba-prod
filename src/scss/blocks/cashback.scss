@@ -7,6 +7,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media (max-width: 767px) {
+    max-width: none;
+    width: calc(100% + 20px);
+    padding-top: 120px;
+    padding-left: 0;
+    padding-right: 0;
+
+	}
   &__decor {
     background-image: url("../assets/images/cashback_bg_01.svg");
     background-repeat: no-repeat;
@@ -15,7 +23,12 @@
     width: 264px;
     height: 264px;
     top: -105px;
-
+    @media (max-width: 767px) {
+      width: 202px;
+      height: 202px;
+      background-size: contain;
+      top: -67px;
+    }
   }
   &__title {
     font-weight: bold;
@@ -23,13 +36,19 @@
     line-height: 151.4%;
     text-transform: uppercase;
     color: #091836;
+    @media (max-width: 767px) {
+      font-size: 20px;
+      text-align: center;
+    }
   }
   &__text {
     font-size: 18px;
     line-height: 125.2%;
     text-align: center;
     color: #091836;
-    
-    
+    @media (max-width: 767px) {
+      font-size: 15px;
+      max-width: 300px;
+    }
   }
 }
