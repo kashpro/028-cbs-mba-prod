@@ -84,12 +84,14 @@
     }
   }
   &__role {
+    text-transform: uppercase; //09.12.2020
     align-self: stretch;
     color: #ffffff;
     flex: 0 0 251px;
     background-color: #4B5E93;
     font-weight: 600;
-    font-size: 30px;
+    // font-size: 30px; //09.12.2020
+    font-size: 24px; //09.12.2020
     line-height: 30px;
     margin-right: 22px;
     display: flex;
