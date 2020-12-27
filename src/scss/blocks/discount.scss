@@ -1,12 +1,6 @@
 .discount {
-  // margin-bottom: 76px;
   background-color: #E64B52;
-  // @media (max-width: 767px) {
-	// 	margin-bottom: 30px;
-	// }
   &__container {
-    // padding-left: 80px;
-    // padding-right: 80px;
     padding-top: 30px;
     padding-bottom: 30px;
     display: flex;
@@ -20,29 +14,20 @@
       padding-top: 15px;
       padding-bottom: 15px;
     }
-    // @media (max-width: 991px) {
-    //   padding: 40px 60px;
-    // }
-    // @media (max-width: 767px) {
-    //   padding: 18px 18px 24px 18px;
-    // }
   }
   &__value {
-    // background-color: $temp1;
     font-weight: 600;
     font-size: 46px;
     line-height: 1;
     text-align: center;
     color: #FFFFFF;
     display: block;
-    // margin-right: 87px;
     flex-shrink: 0;
     max-width: 167px;
     @media (max-width: 1365px) {
       order: 2;
       margin-right: 0px;
       font-size: 28px;
-      // line-height: 150%;
       letter-spacing: -0.03em;
     }
     @media (max-width: 991px) {
@@ -57,21 +42,15 @@
     span {
       font-weight: 600;
       font-size: 72px;
-      // line-height: 150%;
       letter-spacing: -0.03em;
       @media (max-width: 1365px) {
-        // font-weight: 600;
         font-size: 45px;
         line-height: 1;
       }
-      // @media (max-width: 767px) {
-      //   font-size: 30px;
-      // }
     }
   }
   &__title {
     flex-shrink: 0;
-    // background-color: $temp2;
     font-weight: 500;
     font-size: 30px;
     line-height: 150%;
@@ -91,17 +70,8 @@
     @media (max-width: 767px) {
       font-size: 16px;
     }
-    // @media (max-width: 991px) {
-    //   max-width: 500px;
-    // }
-    // @media (max-width: 767px) {
-    //   font-size: 19px;
-    //   line-height: 20px;
-    //   flex: 0 1 240px;
-    // }
   }
   &__btn {
-    // background-color: $temp1;
     max-width: 355px;
     padding: 14px;
     @media (max-width: 1365px) {

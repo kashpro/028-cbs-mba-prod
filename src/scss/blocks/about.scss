@@ -2,26 +2,13 @@
   background-color: #091836;
   margin-top: 70px;
   padding-top: 60px;
-  // margin-bottom: 86px;
   padding-bottom: 60px;
   @media (max-width: 991px) {
-		margin-top: 80px;
+    margin-top: 80px;
   }
   @media (max-width: 767px) {
     margin-top: 40px;
     padding-top: 20px;
-	}
-  // @media (max-width: 991px) {
-  //   // padding-top: 350px;
-  //   padding-bottom: 82px;
-  // }
-  // @media (max-width: 767px) {
-  //   padding-top: 150px;
-  //   padding-bottom: 50px;
-  //   margin-bottom: 50px;
-	// }
-  &__container {
-    // background-color: $temp1;
   }
   &__title {
     font-weight: bold;
@@ -29,10 +16,6 @@
     line-height: 150%;
     color: #FFFFFF;
     margin-bottom: 60px;
-    // @media (max-width: 1365px) {
-    //   text-align: center;
-    //   margin-bottom: 37px;
-    // }
     @media (max-width: 991px) {
       margin-bottom: 40px;
     }
@@ -45,7 +28,6 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    // margin-bottom: 131px;
     @media (max-width: 1365px) {
       justify-content: space-between;
     }
@@ -62,17 +44,11 @@
     flex: 0 0 190px;
     height: 72px;
     @media (max-width: 767px) {
-    //   // transform: scale(0.6);
       height: 43px;
       flex: 0 0 114px;
-    //   // background-color: $temp1;
       background-image: url("../assets/images/logo_icons_sprite_01_mob.png");
-    //   margin-left: 2px !important;
-    //   margin-right: 2px !important;
-    //   margin-top: 10px !important;
-    //   margin-bottom: 10px !important;
-    margin-left: 10px !important;
-    margin-right: 10px !important;
+      margin-left: 10px !important;
+      margin-right: 10px !important;
     }
     & + & {
       margin-left: 22px;

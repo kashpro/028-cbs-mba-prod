@@ -1,5 +1,4 @@
 .cashback {
-  // overflow: visible;
   position: relative;
   max-width: 490px;
   background-color: #EEF0FB;
@@ -13,12 +12,10 @@
     padding-top: 120px;
     padding-left: 0;
     padding-right: 0;
-
-	}
+  }
   &__decor {
     background-image: url("../assets/images/cashback_bg_01.svg");
     background-repeat: no-repeat;
-    // background-position: 50% 0;
     position: absolute;
     width: 264px;
     height: 264px;

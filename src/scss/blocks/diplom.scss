@@ -6,9 +6,8 @@
   @media (max-width: 991px) {
     padding-top: 15px;
     padding-bottom: 30px;
-	}
+  }
   &__container {
-    // background-color: $temp1;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -21,7 +20,6 @@
   }
   &__text1 {
     margin-top: 45px;
-    // background-color: $temp2;
     font-size: 24px;
     line-height: 150%;
     margin-bottom: 18px;
@@ -37,7 +35,6 @@
     font-weight: 500;
     font-size: 53px;
     line-height: 113%;
-    // background-color: $temp3;
     margin-bottom: 53px;
     max-width: 745px;
     @media (max-width: 991px) {
@@ -52,7 +49,6 @@
     }
   }
   &__item {
-    // background-color: $temp4;
     &--1st {
       max-width: 745px;
       @media (max-width: 1365px) {
@@ -83,7 +79,6 @@
   &__image {
     cursor: pointer;
     transition: all 0.2s ease;
-    // background-color: $temp5;
     margin-bottom: 12px;
     line-height: 0;
     @media (max-width: 991px) {
@@ -99,7 +94,6 @@
     }
   }
   &__text2 {
-    // background-color: $temp6;
     font-weight: 300;
     font-size: 24px;
     line-height: 150%;

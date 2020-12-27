@@ -6,11 +6,10 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  // margin-bottom: 100px;
   @media (max-width: 767px) {
     padding: 55px 30px 30px 30px;
     align-items: center;
-	}
+  }
   &__text1 {
     position: absolute;
     top: 0;
@@ -26,7 +25,6 @@
     @media (max-width: 767px) {
       width: 100%;
       max-width: 355px;
-      // left: calc(50% - 1px);
       font-weight: 600;
       font-size: 16px;
       text-align: center;
@@ -36,7 +34,6 @@
     font-weight: 600;
     font-size: 30px;
     line-height: 120%;
-    // max-width: 343px;
     margin-bottom: 34px;
     @media (max-width: 767px) {
       font-size: 25px;
@@ -72,8 +69,6 @@
     span {
       color: #E64B52;
       font-weight: 600;
-      
-      
     }
   }
   &__btn {

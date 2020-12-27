@@ -5,13 +5,9 @@
   @media (max-width: 991px) {
     padding-top: 80px;
     padding-bottom: 60px;
-    // background-color: $temp1;
   }
   @media (max-width: 767px) {
-		padding-bottom: 30px;
-	}
-  &__container {
-
+    padding-bottom: 30px;
   }
   &__title {
     font-weight: bold;
@@ -36,13 +32,11 @@
     }
   }
   &__item {
-    // background-color: $temp2;
     flex: 1 1 45%;
     display: flex;
     align-items: center;
     @media (max-width: 1365px) {
       flex-direction: column;
-      // flex: 0 1 340px;
     }
     @media (max-width: 767px) {
       margin-bottom: 30px !important;
@@ -58,9 +52,6 @@
     }
     &:nth-child(odd) {
       margin-right: 45px;
-      // @media (max-width: 1365px) {
-      //   // margin-right: 0;
-      // }
       @media (max-width: 991px) {
         margin-right: 58px;
       }
@@ -84,14 +75,13 @@
     }
   }
   &__role {
-    text-transform: uppercase; //09.12.2020
+    text-transform: uppercase;
     align-self: stretch;
     color: #ffffff;
     flex: 0 0 251px;
     background-color: #4B5E93;
     font-weight: 600;
-    // font-size: 30px; //09.12.2020
-    font-size: 24px; //09.12.2020
+    font-size: 24px;
     line-height: 30px;
     margin-right: 22px;
     display: flex;

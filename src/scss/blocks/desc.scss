@@ -3,28 +3,23 @@
   padding-bottom: 70px;
   background: url("../assets/images/desc_bg_01.svg") 0 0 no-repeat;
   color: #091836;
-  
   @media (max-width: 991px) {
     background: none;
-    // background-color: $temp5;
     padding-top: 80px;
     padding-bottom: 40px;
   }
   @media (max-width: 767px) {
     padding-top: 60px;
     padding-bottom: 30px;
-	}
+  }
   &__container {
-    // background-color: $temp1;
     display: flex;
     @media (max-width: 1365px) {
       flex-direction: column;
       align-items: center;
     }
-    
   }
   &__box1 {
-    // background-color: $temp2;
     flex: 0 0 795px;
     margin-right: 105px;
     @media (max-width: 1720px) {
@@ -39,18 +34,9 @@
     }
   }
   &__box2 {
-    // background-color: $temp3;
-    // padding-top: 145px;
     flex: 0 0 580px;
     display: flex;
     align-items: center;
-    // flex-direction: column;
-    // align-items: flex-start;
-    // position: relative;
-    // justify-content: center;
-    @media (max-width: 1720px) {
-      // flex: 0 1 50%;
-    }
     @media (max-width: 1365px) {
       max-width: 580px;
       flex: 0 1 auto;
@@ -59,7 +45,6 @@
     @media (max-width: 767px) {
       flex-direction: column;
       margin-top: 50px;
-      // max-width: 300px;
     }
   }
   &__box3 {
@@ -74,27 +59,12 @@
   }
   &__image {
     margin-right: 35px;
-    // position: absolute;
-    // text-align: center;
     line-height: 0;
-    // margin-bottom: 40px;
-    // right: 0;
-    // top: 105px;
-    @media (max-width: 1365px) {
-      // top: 0;
-    }
     @media (max-width: 767px) {
-      // width: 116px;
       max-width: 170px;
       margin-right: 0;
       margin-bottom: 23px;
     }
-    img {
-      // position: absolute;
-      // float: right;
-      // top: 0;
-    }
-    
   }
   &__text1 {
     font-size: 24px;
@@ -119,9 +89,6 @@
       margin-bottom: 25px;
     }
   }
-  &__list {
-
-  }
   &__item {
     display: flex;
     align-items: center;
@@ -143,9 +110,7 @@
     font-weight: 900;
     font-size: 80px;
     line-height: 131.5%;
-    // width: 75px;
     flex: 0 0 75px;
-    // background-color: $temp4;
     text-align: center;
     border-right: 3px solid #091836;
     margin-right: 28px;
@@ -163,7 +128,6 @@
     }
   }
   &__text2 {
-    // background-color: $temp5;
     font-size: 24px;
     line-height: 130%;
     @media (max-width: 991px) {
@@ -173,92 +137,48 @@
       font-size: 17px;
       text-align: center;
     }
-    
   }
   &__text3 {
-    // margin-top: 250px;
     font-weight: 600;
-    // font-size: 54px;
-    // line-height: 47px;
     font-size: 49px;
     line-height: 55px;
     margin-bottom: 10px;
     text-align: center;
-    @media (max-width: 1365px) {
-      // margin-top: 130px;
-    }
     @media (max-width: 767px) {
-      // font-size: 28px; ////
-      // line-height: 1;
-      // margin-top: 55px;
       font-size: 40px;
     }
-    // background-color: $temp1;
-    // position: relative;
-    // font-weight: 600;
-    // font-size: 45px;
-    // font-size: 40px;
-    // line-height: 1;
-    // margin-bottom: 63px;
-    // text-align: center;
-    // max-width: 340px;
-    // span {
-    //   &:nth-child(1) {
-    //     font-size: 55px;
-    //   }
-    //   &:nth-child(2) {
-    //     font-size: 67px;
-    //   }
-    // }
   }
-  // &__image {
-  //   line-height: 0;
-  //   float: right;
-  //   img {
-      
-  //   }
-  // }
   &__text4 {
-    // background-color: $temp2;
-    // font-weight: 600;
-    // font-size: 34px; //09.12.2020
     font-size: 24px;
     line-height: 150%;
     text-align: center;
     margin-bottom: 23px;
-    @media (max-width: 767px) {
-      // font-size: 14px; ////
-      // line-height: 1;
-    }
   }
   &__text5 {
-    // background-color: $temp3;
     font-weight: 600;
     font-size: 67px;
     line-height: 50px;
     @media (max-width: 767px) {
-      font-size: 35px; ////
+      font-size: 35px;
       line-height: 1;
     }
   }
   &__text6 {
-    // background-color: $temp4;
     font-weight: 600;
     font-size: 45px;
     line-height: 55px;
     @media (max-width: 767px) {
-      font-size: 24px; ////
+      font-size: 24px;
       line-height: 1;
     }
   }
   &__text7 {
-    // background-color: $temp5;
     font-weight: 600;
     font-size: 40px;
     line-height: 45px;
     margin-bottom: 63px;
     @media (max-width: 767px) {
-      font-size: 20px; ////
+      font-size: 20px;
       line-height: 1.3;
       margin-top: 5px;
       margin-bottom: 52px;

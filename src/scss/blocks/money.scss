@@ -1,11 +1,7 @@
 .money {
-  // padding-top: 60px;
   margin-top: 60px;
   @media (max-width: 991px) {
-		margin-top: 35px;
-	}
-  &__container {
-    // background-color: $temp1;
+    margin-top: 35px;
   }
   &__title {
     font-weight: bold;
@@ -20,14 +16,12 @@
     }
   }
   &__content {
-    // background-color: $temp2;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-between;
     align-content: space-between;
     height: 1015px;
-    // align-items: flex-start;
     @media (max-width: 1365px) {
       height: auto;
       align-items: center;
@@ -35,9 +29,6 @@
     }
   }
   &__cost {
-    // background-color: $temp1;
-    // height: 400px;
-    // max-width: 500px;
     @media (max-width: 1365px) {
       order: 1;
       margin-bottom: 50px;
@@ -45,20 +36,13 @@
     @media (max-width: 991px) {
       margin-bottom: 75px;
     }
-    
   }
   &__countdown {
-    // background-color: $temp2;
-    // height: 500px;
-    // max-width: 500px;
     @media (max-width: 1365px) {
       order: 4;
     }
   }
   &__first {
-    // background-color: $temp3;
-    // height: 500px;
-    // max-width: 500px;
     @media (max-width: 1365px) {
       order: 2;
       margin-bottom: 100px;
@@ -68,9 +52,6 @@
     }
   }
   &__cashback {
-    // background-color: $temp4;
-    // height: 400px;
-    // max-width: 500px;
     @media (max-width: 1365px) {
       order: 3;
       margin-bottom: 50px;
